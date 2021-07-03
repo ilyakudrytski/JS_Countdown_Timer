@@ -17,10 +17,12 @@ const countdown = () => {
 
 
     daysEl.innerText = days;
-    hoursEl.innerHTML = hours;
-    minutesEl.innerHTML = mins;
-    secondsEl.innerHTML = secs;
+    hoursEl.innerHTML = formatTime(hours);
+    minutesEl.innerHTML = formatTime(mins);
+    secondsEl.innerHTML = formatTime(secs);
 }
+
+const formatTime = time => time < 10 ? `0${time}` : time
 countdown()
 
 setInterval(countdown, 1000)
